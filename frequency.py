@@ -1,13 +1,13 @@
 from client import MQTT
 import time
 
-def run(cid = None, silence = False):
+def run(cid = None, silence = False, msg = '0'):
     mqtt = MQTT()
 
     client = mqtt.connect_mqtt(cid)
     client.loop_start()
 
-    msg = '0' * 100
+    msg = msg * 100
     msg_number = 1
     while True:
         result = client.publish(mqtt.topic, msg)

@@ -1,11 +1,14 @@
 import threading
 import time
 import psutil
+import signal
 
 import random
 from client import MQTT
 
 from csv import writer
+
+STOPPED = False
 
 def new_sub(cid = 'sub'):
     mqtt = MQTT()

@@ -6,6 +6,8 @@ mqtt = MQTT()
 
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
+        if msg.payload.decode().startswith('1'):
+            return
         print(f"Received message of size `{len(msg.payload.decode())}` from `{msg.topic}` topic")
 
     client.subscribe(mqtt.topic)
