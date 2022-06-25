@@ -26,8 +26,7 @@ sudo apt-get install mosquitto mosquitto-clients
 2. O broker vai ser inicializado por padrão.  É necessário pará-lo e reinicializá-lo.
 
 ```
-sudo /etc/init.d/mosquitto stop
-sudo mosquitto –v
+sudo /etc/init.d/mosquitto restart
 ```
 
 3. Configure o broker e tópico em `client.py`, se necessário.
