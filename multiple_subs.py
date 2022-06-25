@@ -34,4 +34,4 @@ while True:
 
     n += 1
     print(f"Iniciada thread {n}")
-    threading.Thread(target=new_sub, args=(str(n),)).start()
+    threading.Thread(target=new_sub, args=(f's{n}', )).start()
