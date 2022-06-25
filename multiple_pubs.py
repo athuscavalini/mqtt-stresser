@@ -17,4 +17,4 @@ while True:
 
     n += 1
     print(f"Iniciada thread {n}")
-    threading.Thread(target=frequency.run, args=(str(n),True,'1')).start()
+    threading.Thread(target=frequency.run, args=(f'p{n}', True, '1')).start()
