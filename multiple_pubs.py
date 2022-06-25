@@ -5,13 +5,8 @@ import psutil
 
 from csv import writer
 
-n = 1
+n = 0
 while True:
-    print(f"Iniciada thread {n}")
-    threading.Thread(target=frequency.run, args=(str(n),True,'1')).start()
-    n += 1
-    time.sleep(5)
-
     with open('pubs_data.csv', 'a+', newline='') as write_obj:
         csv_writer = writer(write_obj)
         cpu = psutil.cpu_percent(5)
@@ -19,3 +14,7 @@ while True:
         print('CPU usage: ', cpu)
         print('RAM usage:', ram)
         csv_writer.writerow([n, cpu, ram])
+
+    n += 1
+    print(f"Iniciada thread {n}")
+    threading.Thread(target=frequency.run, args=(str(n),True,'1')).start()
